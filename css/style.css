@@ -6,3 +6,7 @@ form{
     margin-left: 3.5px;
     margin-top: 3.5px;
 }
+
+.checked {
+    opacity: 0.5;
+}

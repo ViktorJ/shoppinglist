@@ -2,7 +2,8 @@
 
 let React = require("react"),
     ReactRedux = require("react-redux"),
-    actions = require("../actions/actions");
+    actions = require("../actions/actions"),
+    Item = require("./item.js");
     
 const Items = React.createClass({
     renderItems: function(){
@@ -14,9 +15,9 @@ const Items = React.createClass({
         if(items){
             items.forEach(function (item){
                 if(item.checked){
-                    itemsArray.push(<div key={key} className="row"><div className="panel panel-default col-sm-11 col-md-11 col-lg-11"><div key={key++} className="panel-body" onClick={self.props.checkItem.bind(self, item)}><del>{item.item}</del></div></div> <button className="btn btn-primary panelbutton" onClick={self.props.submitDeleteItem.bind(self, item.key)}><i className="fa fa-trash-o"></i></button></div>);
+                    itemsArray.push(<Item key={key++} class="panel-body checked" check={self.props.checkItem.bind(self, item)} item={<del>{item.item}</del>} delete={self.props.submitDeleteItem.bind(self, item.key)} />);
                 } else {
-                    itemsArray.push(<div key={key} className="row"><div className="panel panel-default col-sm-11 col-md-11 col-lg-11"><div key={key++} className="panel-body" onClick={self.props.checkItem.bind(self, item)}>{item.item}</div></div> <button className="btn btn-primary panelbutton" onClick={self.props.submitDeleteItem.bind(self, item.key)}><i className="fa fa-trash-o"></i></button></div>);
+                    itemsArray.push(<Item key={key++} class="panel-body" check={self.props.checkItem.bind(self, item)} item={item.item} delete={self.props.submitDeleteItem.bind(self, item.key)} />);
                 }
                 
             });
@@ -26,7 +27,7 @@ const Items = React.createClass({
     },
     render: function(){
         return (
-            <div className="items col-sm-10 col-md-10 col-lg-10">
+            <div className="items col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 {this.renderItems()}
             </div>
         );

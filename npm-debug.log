@@ -1,73 +1,26 @@
 0 info it worked if it ends with ok
-1 verbose cli [ 'node',
-1 verbose cli   '/usr/local/bin/npm',
-1 verbose cli   'install',
-1 verbose cli   'babel-preset-es20155' ]
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'run', 'build' ]
 2 info using npm@1.4.28
 3 info using node@v0.10.35
-4 warn package.json @ No description
-5 warn package.json @ No repository field.
-6 warn package.json @ No README data
-7 verbose readDependencies using package.json deps
-8 verbose cache add [ 'babel-preset-es20155', null ]
-9 verbose cache add name=undefined spec="babel-preset-es20155" args=["babel-preset-es20155",null]
-10 verbose parsed url { protocol: null,
-10 verbose parsed url   slashes: null,
-10 verbose parsed url   auth: null,
-10 verbose parsed url   host: null,
-10 verbose parsed url   port: null,
-10 verbose parsed url   hostname: null,
-10 verbose parsed url   hash: null,
-10 verbose parsed url   search: null,
-10 verbose parsed url   query: null,
-10 verbose parsed url   pathname: 'babel-preset-es20155',
-10 verbose parsed url   path: 'babel-preset-es20155',
-10 verbose parsed url   href: 'babel-preset-es20155' }
-11 silly lockFile ce2e44f9-babel-preset-es20155 babel-preset-es20155
-12 verbose lock babel-preset-es20155 /Users/viktorjansson/.npm/ce2e44f9-babel-preset-es20155.lock
-13 silly lockFile ce2e44f9-babel-preset-es20155 babel-preset-es20155
-14 silly lockFile ce2e44f9-babel-preset-es20155 babel-preset-es20155
-15 verbose addNamed [ 'babel-preset-es20155', '' ]
-16 verbose addNamed [ null, '*' ]
-17 silly lockFile 268cb336-babel-preset-es20155 babel-preset-es20155@
-18 verbose lock babel-preset-es20155@ /Users/viktorjansson/.npm/268cb336-babel-preset-es20155.lock
-19 silly addNameRange { name: 'babel-preset-es20155', range: '*', hasData: false }
-20 verbose request where is /babel-preset-es20155
-21 verbose request registry https://registry.npmjs.org/
-22 verbose request id c40e46f1c4236a58
-23 verbose url raw /babel-preset-es20155
-24 verbose url resolving [ 'https://registry.npmjs.org/', './babel-preset-es20155' ]
-25 verbose url resolved https://registry.npmjs.org/babel-preset-es20155
-26 verbose request where is https://registry.npmjs.org/babel-preset-es20155
-27 info trying registry request attempt 1 at 12:20:33
-28 http GET https://registry.npmjs.org/babel-preset-es20155
-29 http 404 https://registry.npmjs.org/babel-preset-es20155
-30 silly registry.get cb [ 404,
-30 silly registry.get   { 'content-type': 'application/json',
-30 silly registry.get     'cache-control': 'max-age=0',
-30 silly registry.get     'content-length': '2',
-30 silly registry.get     'accept-ranges': 'bytes',
-30 silly registry.get     date: 'Wed, 20 Jan 2016 11:20:34 GMT',
-30 silly registry.get     via: '1.1 varnish',
-30 silly registry.get     age: '0',
-30 silly registry.get     connection: 'keep-alive',
-30 silly registry.get     'x-served-by': 'cache-fra1221-FRA',
-30 silly registry.get     'x-cache': 'MISS',
-30 silly registry.get     'x-cache-hits': '0',
-30 silly registry.get     'x-timer': 'S1453288834.387270,VS0,VE115' } ]
-31 silly lockFile 268cb336-babel-preset-es20155 babel-preset-es20155@
-32 silly lockFile 268cb336-babel-preset-es20155 babel-preset-es20155@
-33 error 404 Not Found
-33 error 404
-33 error 404 'babel-preset-es20155' is not in the npm registry.
-33 error 404 You should bug the author to publish it
-33 error 404
-33 error 404 Note that you can also install from a
-33 error 404 tarball, folder, or http url, or git url.
-34 error System Darwin 15.0.0
-35 error command "node" "/usr/local/bin/npm" "install" "babel-preset-es20155"
-36 error cwd /Users/viktorjansson/Documents/web/shoppinglist
-37 error node -v v0.10.35
-38 error npm -v 1.4.28
-39 error code E404
-40 verbose exit [ 1, true ]
+4 verbose run-script [ 'prebuild', 'build', 'postbuild' ]
+5 info prebuild @
+6 info build @
+7 verbose unsafe-perm in lifecycle true
+8 info @ Failed to exec build script
+9 error @ build: `browserify -t [ babelify --presets [ es2015 react ] ] --debug src/main.js -o bundle.js`
+9 error Exit status 1
+10 error Failed at the @ build script.
+10 error This is most likely a problem with the  package,
+10 error not with npm itself.
+10 error Tell the author that this fails on your system:
+10 error     browserify -t [ babelify --presets [ es2015 react ] ] --debug src/main.js -o bundle.js
+10 error You can get their info via:
+10 error     npm owner ls
+10 error There is likely additional logging output above.
+11 error System Darwin 15.0.0
+12 error command "node" "/usr/local/bin/npm" "run" "build"
+13 error cwd /Users/viktorjansson/Documents/web/shoppinglist
+14 error node -v v0.10.35
+15 error npm -v 1.4.28
+16 error code ELIFECYCLE
+17 verbose exit [ 1, true ]

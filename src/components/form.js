@@ -17,12 +17,12 @@ const Form = React.createClass({
     render: function(){
         return (
             <div className="row">
-            <form onSubmit={this.handleSubmit}>
-                <div className="form-group col-sm-10 col-md-10 col-lg-10">
-                    <input type="text" className="form-control" ref="item" />
-                </div>
-                <button type="submit" className="btn btn-primary"><i className="fa fa-plus"></i></button>
-            </form>
+                <form onSubmit={this.handleSubmit}>
+                    <div className="form-group col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                        <input type="text" className="form-control" ref="item" />
+                    </div>
+                    <button type="submit" className="btn btn-primary"><i className="fa fa-plus"></i></button>
+                </form>
             </div>
         );
     }
