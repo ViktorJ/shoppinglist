@@ -1,0 +1,9 @@
+{
+  "firebase": "shoplistapp",
+  "public": "",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}

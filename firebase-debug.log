@@ -1,0 +1,28 @@
+[debug] ----------------------------------------------------------------------
+[debug] Command:      node /usr/local/bin/firebase deploy
+[debug] Platform:     darwin
+[debug] Node Version: v0.10.35
+[debug] Time:         Tue Jan 19 2016 01:34:34 GMT+0100 (CET)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/firebase/shoplistapp/token?token=XXX 
+[debug] <<< HTTP RESPONSE 200
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/firebase/shoplistapp/token?token=XXX 
+[debug] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'shoplistapp'...
+[info] 
+[info] i  deploying 
+[debug] >>> HTTP REQUEST POST https://deploy.firebase.com/firebase/shoplistapp/releases?token=XXX
+[debug] TypeError: Cannot read property 'error' of undefined
+    at Request._callback (/usr/local/lib/node_modules/firebase-tools/lib/api.js:31:22)
+    at Request.self.callback (/usr/local/lib/node_modules/firebase-tools/node_modules/request/request.js:198:22)
+    at Request.emit (events.js:98:17)
+    at Request.<anonymous> (/usr/local/lib/node_modules/firebase-tools/node_modules/request/request.js:1035:10)
+    at Request.emit (events.js:117:20)
+    at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/firebase-tools/node_modules/request/request.js:962:12)
+    at IncomingMessage.emit (events.js:117:20)
+    at _stream_readable.js:944:16
+    at process._tickCallback (node.js:442:13)
+[error] 
+[error] Error: An unexpected error has occurred.
