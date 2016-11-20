@@ -6,15 +6,15 @@ let React = require('react'),
     store = require('./store'),
     actions = require('./actions/actions'),
     Form = require('./components/form'),
-    Items = require('./components/items');
+    Items = require('./components/items'),
+    Welcome = require('./components/welcome');
 
 
 
 ReactDOM.render((
     <Provider store={store}>
         <div className="container">
-            <Form /> 
-            <Items />
+            <Welcome />
         </div>
     </Provider>
 ), document.getElementById('content'));
