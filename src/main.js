@@ -5,17 +5,12 @@ let React = require('react'),
     Provider = require('react-redux').Provider,
     store = require('./store'),
     actions = require('./actions/actions'),
-    Form = require('./components/form'),
-    Items = require('./components/items'),
-    Welcome = require('./components/welcome');
-
+    Start = require('./components/start');
 
 
 ReactDOM.render((
     <Provider store={store}>
-        <div className="container">
-            <Welcome />
-        </div>
+        <Start />
     </Provider>
 ), document.getElementById('content'));
 

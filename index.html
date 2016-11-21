@@ -2,10 +2,10 @@
 <html>
     <head>
         <meta charset="utf-8">
-        
+
         <link rel="stylesheet" href="css/bootstrap-flatly.min.css" type="text/css"></link>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="css/style.css" type="text/css"></link> 
+        <link rel="stylesheet" href="css/style.css" type="text/css"></link>
         <link rel="icon" type="image/png" href="favicon.png">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>ShoppingList</title>
@@ -15,6 +15,18 @@
             <div id="content"></div>
         </div>
         <script src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
+          <script>
+            // Initialize Firebase
+            var config = {
+              apiKey: "AIzaSyDQu8HVT6bMUTVBYGQCZvB_8yag5g8cQsQ",
+              authDomain: "shoplistapp.firebaseapp.com",
+              databaseURL: "https://shoplistapp.firebaseio.com",
+              storageBucket: "firebase-shoplistapp.appspot.com",
+              messagingSenderId: "882310838265"
+            };
+            firebase.initializeApp(config);
+          </script>
         <script type="text/javascript" src="bundle.js"></script>
     </body>
 </html>

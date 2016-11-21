@@ -10,3 +10,9 @@ form{
 .checked {
     opacity: 0.5;
 }
+
+.welcomeBox {
+  padding: 10px;
+  margin-top: 50px;
+  width: 400px;
+}

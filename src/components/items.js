@@ -4,13 +4,13 @@ let React = require("react"),
     ReactRedux = require("react-redux"),
     actions = require("../actions/actions"),
     Item = require("./item.js");
-    
+
 const Items = React.createClass({
     renderItems: function(){
         let items = this.props.items.data;
         let itemsArray = [];
         let key = 0;
-        
+
         let self = this;
         if(items){
             items.forEach(function (item){
@@ -19,11 +19,14 @@ const Items = React.createClass({
                 } else {
                     itemsArray.push(<Item key={key++} class="panel-body" check={self.props.checkItem.bind(self, item)} item={item.item} delete={self.props.submitDeleteItem.bind(self, item.key)} />);
                 }
-                
+
             });
         }
-                          
+
         return itemsArray.reverse();
+    },
+    signOut: function(){
+      firebase.auth().signOut();
     },
     render: function(){
         return (
