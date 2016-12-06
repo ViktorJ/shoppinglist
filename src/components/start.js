@@ -5,11 +5,16 @@ let React = require('react'),
     Items = require('./items'),
     Welcome = require('./welcome');
 
-const Start = React.createClass({
-    getInitialState: function () {
-      return { loggedIn: false };
-    },
-    componentDidMount: function () {
+class Start extends React.Component {
+
+    constructor(props){
+      super(props);
+      this.state = {
+        loggedIn: false
+      };
+    }
+
+    componentDidMount() {
       let self = this;
       firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
@@ -18,8 +23,9 @@ const Start = React.createClass({
           });
         }
       });
-    },
-    render: function(){
+    }
+
+    render(){
         let loggedIn = this.state.loggedIn;
         return (
             <div>
@@ -36,6 +42,6 @@ const Start = React.createClass({
             </div>
         );
     }
-});
+}
 
 module.exports = Start;

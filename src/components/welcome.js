@@ -2,10 +2,16 @@
 
 let React = require("react");
 
-const Welcome = React.createClass({
-    handleSubmit: function(e){
+class Welcome extends React.Component{
+
+    constructor(props){
+      super(props);
+      this.handleSubmit = this.handleSubmit.bind(this);
+    }
+    
+    handleSubmit(e){
         e.preventDefault();
-        
+
         let email = this.refs.email.value;
         let password = this.refs.password.value;
 
@@ -24,8 +30,9 @@ const Welcome = React.createClass({
 
         this.refs.email.value = "";
         this.refs.password.value = "";
-    },
-    render: function(){
+    }
+
+    render(){
         return (
           <div className="welcomeBox">
           <h1><i className="fa fa-shopping-cart" aria-hidden="true"></i> ShoppingList</h1>
@@ -45,6 +52,6 @@ const Welcome = React.createClass({
           </div>
         );
     }
-});
+}
 
 module.exports = Welcome;

@@ -5,8 +5,14 @@ let React = require("react"),
     actions = require("../actions/actions"),
     Item = require("./item.js");
 
-const Items = React.createClass({
-    renderItems: function(){
+class Items extends React.Component {
+
+    constructor(props){
+      super(props);
+      this.renderItems = this.renderItems.bind(this);
+    }
+
+    renderItems(){
         let items = this.props.items.data;
         let itemsArray = [];
         let key = 0;
@@ -24,31 +30,33 @@ const Items = React.createClass({
         }
 
         return itemsArray.reverse();
-    },
-    signOut: function(){
+    }
+
+    signOut(){
       firebase.auth().signOut();
-    },
-    render: function(){
+    }
+
+    render(){
         return (
             <div className="items col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 {this.renderItems()}
             </div>
         );
     }
-});
+}
 
-let mapStateToProps = function (state) {
+let mapStateToProps = (state) => {
     return {
         items: state.items
     };
 };
 
-let mapDispatchToProps = function (dispatch) {
+let mapDispatchToProps = (dispatch) => {
     return {
-        submitDeleteItem: function (key) {
+        submitDeleteItem: (key) => {
             dispatch(actions.submitDeleteItem(key));
         },
-        checkItem: function (item) {
+        checkItem: (item) => {
             dispatch(actions.checkItem(item));
         }
     }
