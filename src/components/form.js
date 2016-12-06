@@ -3,18 +3,25 @@
 let React = require("react"),
     ReactRedux = require("react-redux"),
     actions = require("../actions/actions");
-    
-const Form = React.createClass({
-    handleSubmit: function(e){
+
+class Form extends React.Component {
+
+    constructor(props){
+      super(props);
+      this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleSubmit(e){
         e.preventDefault();
-        
+
         let item = this.refs.item.value;
-        
+
         this.props.submitNewItem(item);
-        
+
         this.refs.item.value = "";
-    },
-    render: function(){
+    }
+
+    render(){
         return (
             <div className="row">
                 <form onSubmit={this.handleSubmit}>
@@ -26,17 +33,17 @@ const Form = React.createClass({
             </div>
         );
     }
-});
+}
 
-let mapStateToProps = function(state){
+let mapStateToProps = (state) => {
     return {
         items:state.items
     };
 };
 
-let mapDispatchToProps = function(dispatch){
+let mapDispatchToProps = (dispatch) => {
     return {
-        submitNewItem: function(item){
+        submitNewItem: (item) => {
             dispatch(actions.submitNewItem(item));
         }
     }
