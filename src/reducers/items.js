@@ -1,6 +1,6 @@
 'use strict';
 
-let initialState = require('../initialstate'),
+const initialState = require('../initialstate'),
     C = require('../constants');
 
 const ItemsReducer = (state, action) => {

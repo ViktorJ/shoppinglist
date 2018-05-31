@@ -6,8 +6,8 @@ let C = require('../constants'),
 
 
 export function submitNewItem(item){
-    return function(dispatch, getState){
-        let newItem = {
+    return (dispatch, getState) => {
+        const newItem = {
             item: item,
             checked: false
         }
@@ -16,37 +16,35 @@ export function submitNewItem(item){
 }
 
 export function checkItem(item){
-    return function(dispatch, getState){
+    return (dispatch, getState) => {
         if(item.checked){
-            let newItem = {
+            const newItem = {
                 item: item.item,
                 checked: false
             }
-            itemsRef.child(item.key).update(newItem);
         } else {
-            let newItem = {
+            const newItem = {
                 item: item.item,
                 checked: true
             }
-            itemsRef.child(item.key).update(newItem);
         }
-
+        itemsRef.child(item.key).update(newItem);
     }
 }
 
 export function submitDeleteItem(key){
-    return function(dispatch, getState){
+    return (dispatch, getState) => {
         itemsRef.child(key).remove();
     }
 }
 
 export function listeningToItems(){
     return function(dispatch, getState){
-        itemsRef.on("value", function(snapshot){
-            let itemsArray = [];
-            snapshot.forEach(function(item){
-                let itemData = item.val();
-                let key = item.key();
+        itemsRef.on("value", snapshot => {
+            const itemsArray = [];
+            snapshot.forEach(item => {
+                const itemData = item.val();
+                const key = item.key();
                     itemsArray.push({
                         item: itemData.item,
                         checked: itemData.checked,

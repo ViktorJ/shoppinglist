@@ -45,13 +45,13 @@ class Items extends React.Component {
     }
 }
 
-let mapStateToProps = (state) => {
+let mapStateToProps = state => {
     return {
         items: state.items
     };
 };
 
-let mapDispatchToProps = (dispatch) => {
+let mapDispatchToProps = dispatch => {
     return {
         submitDeleteItem: (key) => {
             dispatch(actions.submitDeleteItem(key));

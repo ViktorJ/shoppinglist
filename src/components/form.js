@@ -13,11 +13,8 @@ class Form extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();
-
         let item = this.refs.item.value;
-
         this.props.submitNewItem(item);
-
         this.refs.item.value = "";
     }
 
@@ -27,23 +24,23 @@ class Form extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-group col-xs-10 col-sm-10 col-md-10 col-lg-10">
                         <input type="text" className="form-control" ref="item" />
+                        <button type="submit" className="btn btn-primary"><i className="fa fa-plus"></i></button>
                     </div>
-                    <button type="submit" className="btn btn-primary"><i className="fa fa-plus"></i></button>
                 </form>
             </div>
         );
     }
 }
 
-let mapStateToProps = (state) => {
+const mapStateToProps = state => {
     return {
-        items:state.items
+        items: state.items
     };
 };
 
-let mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
     return {
-        submitNewItem: (item) => {
+        submitNewItem: item => {
             dispatch(actions.submitNewItem(item));
         }
     }

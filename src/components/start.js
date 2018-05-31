@@ -26,11 +26,11 @@ class Start extends React.Component {
     }
 
     render(){
-        let loggedIn = this.state.loggedIn;
+        const loggedIn = this.state.loggedIn;
         return (
             <div>
             {loggedIn ? (
-              <div className="container">
+              <div>
               <Form />
               <Items />
               </div>

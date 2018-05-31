@@ -2,9 +2,23 @@ form{
     margin-top: 1em;
 }
 
-.panelbutton{
-    margin-left: 3.5px;
-    margin-top: 3.5px;
+.form-group {
+    display: flex;
+    width: 100%;
+}
+
+.items {
+    width: 100%;
+    margin-bottom: -1em;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.panelbutton {
+    height: 3.5em;
 }
 
 .checked {
