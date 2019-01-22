@@ -17,13 +17,14 @@ export function submitNewItem(item){
 
 export function checkItem(item){
     return (dispatch, getState) => {
+        let newItem = {};
         if(item.checked){
-            const newItem = {
+            newItem = {
                 item: item.item,
                 checked: false
             }
         } else {
-            const newItem = {
+            newItem = {
                 item: item.item,
                 checked: true
             }
